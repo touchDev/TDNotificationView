@@ -12,6 +12,7 @@
 		502879C621BEA851001F0C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502879C421BEA851001F0C9C /* Main.storyboard */; };
 		502879C821BEA853001F0C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502879C721BEA853001F0C9C /* Assets.xcassets */; };
 		502879CE21BEA853001F0C9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 502879CD21BEA853001F0C9C /* main.m */; };
+		502879D621C0BC0B001F0C9C /* TDNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502879D521C0BC0B001F0C9C /* TDNotificationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		502879C721BEA853001F0C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		502879CC21BEA853001F0C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		502879CD21BEA853001F0C9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		502879D421C0BC0B001F0C9C /* TDNotificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDNotificationView.h; sourceTree = "<group>"; wrapsLines = 0; };
+		502879D521C0BC0B001F0C9C /* TDNotificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDNotificationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 				502879BF21BEA851001F0C9C /* AppDelegate.m */,
 				502879C121BEA851001F0C9C /* ViewController.h */,
 				502879C221BEA851001F0C9C /* ViewController.m */,
+				502879D421C0BC0B001F0C9C /* TDNotificationView.h */,
+				502879D521C0BC0B001F0C9C /* TDNotificationView.m */,
 				502879C421BEA851001F0C9C /* Main.storyboard */,
 				502879C721BEA853001F0C9C /* Assets.xcassets */,
 				502879CC21BEA853001F0C9C /* Info.plist */,
@@ -138,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502879C321BEA851001F0C9C /* ViewController.m in Sources */,
+				502879D621C0BC0B001F0C9C /* TDNotificationView.m in Sources */,
 				502879CE21BEA853001F0C9C /* main.m in Sources */,
 				502879C021BEA851001F0C9C /* AppDelegate.m in Sources */,
 			);
