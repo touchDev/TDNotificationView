@@ -16,32 +16,43 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
     NVExpandAndCenter
 };
 
-// Aux view handle style
-typedef NS_ENUM(NSInteger, NVHandleStyle)
+@interface TDNotificationView : NSObject <UIScrollViewDelegate>
 {
-    NVHandleStyleLine,
-    NVHandleStyleBox
-};
-
-@interface NotificationView : NSObject <UIScrollViewDelegate>
-{
-    UIWindow                *window;
     UIView                  *blackMask;
     UIView                  *notificationView;
     UIView                  *alertView;
-    UIView                  *auxViewHandle;
+    UIView                  *auxView;
     UIPageControl           *pageController;
 }
 
 // Public properties
-@property(nonatomic)        BOOL                    enableAuxView;          // default: NO
-@property(nonatomic)        NVAnimationStyle        animationStyle;         // default: NVExpandInPlace | (Only for alert view)
-@property(nonatomic)        NVHandleStyle           handleStyle;            // default: NVHandleStyleBox
-@property(nonatomic)        NSArray                 *auxViewsArray;         // default: nil
-@property(nonatomic)        UIViewContentMode       auxViewContentMode;     // default: UIViewContentModeCenter
+@property (nonatomic)       UIColor                 *mainBackgroundColor;   // default: whiteColor
+@property (nonatomic)       UIColor                 *auxHandleTint;         // default: 90% whiteColor
+@property (nonatomic)       UIColor                 *handleLineTint;        // default: grayColor
+@property (nonatomic)       UIColor                 *auxViewTint;           // default: 90% whiteColor
+@property (nonatomic)       BOOL                    enableAuxView;          // default: NO
+@property (nonatomic)       NVAnimationStyle        animationStyle;         // default: NVExpandInPlace | (Only for alert view)
+@property (nonatomic)       BOOL                    enableHandleAnimation;  // default: NO
+@property (nonatomic)       NSArray                 *auxViewsArray;         // default: nil
+@property (nonatomic)       UIViewContentMode       auxViewContentMode;     // default: UIViewContentModeCenter
 
 // Public methods
 - (void)showNotificationWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
-- (void)showAlertWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
+//- (void)showAlertWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
 
 @end
+
+// Notification Layout
+//
+// +------------------------------------+
+// |  Notification View                 |
+// |  +------------------------------+  |
+// |  | Aux Handle View              |  |
+// |  +------------------------------+  |
+// |  | Message View                 |  |
+// |  |                              |  |
+// |  +------------------------------+  |
+// |  | Aux View                     |  |
+// |  |                              |  |
+// |  +------------------------------+  |
+// +------------------------------------+

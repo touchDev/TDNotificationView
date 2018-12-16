@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDNotificationView.h"
 
 @interface ViewController : UIViewController
-
+{
+    // Notification view instance
+    TDNotificationView                *notificationView;
+}
 
 @end
 
