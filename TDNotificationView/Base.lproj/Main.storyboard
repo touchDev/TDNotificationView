@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +22,14 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="showNotificcation1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OhO-5R-Xhc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t3x-ou-rAt">
+                                <rect key="frame" x="212" y="503" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ALERT"/>
+                                <connections>
+                                    <action selector="showAlert1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2jQ-9n-Ieg"/>
                                 </connections>
                             </button>
                         </subviews>

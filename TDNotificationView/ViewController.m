@@ -19,7 +19,7 @@
     [super viewDidLoad];
 
     // Initialize the notification view
-    notificationView = [[TDNotificationView alloc] init];
+    tdNotificationView = [[TDNotificationView alloc] init];
 }
 
 - (UIImage *)imageFromColor:(UIColor *)color withSize:(CGSize)imageSize
@@ -44,12 +44,30 @@
     // Show the help view
     NSString *titleString = @"Vapor Quality";
     NSString *messageString = @"Quality (x) is the mass fraction of vapor in a liquid/vapor mixture. Quality can be calculated by dividing the mass of the vapor by the total mass of the mixture.";
-    [notificationView setEnableAuxView:YES];
-//    [notificationView setEnableHandleAnimation:NO];
-//    [notificationView setAuxHandleTint:[UIColor clearColor]];
-//    [notificationView setHandleLineTint:[UIColor whiteColor]];
-    [notificationView setAuxViewsArray:@[view1, view2, view3]];
-    [notificationView showNotificationWithTitle:titleString andMessage:messageString];
+    [tdNotificationView setEnableAuxView:YES];
+//    [tdNotificationView setEnableHandleAnimation:YES];
+//    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
+//    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
+    [tdNotificationView setAuxViewsArray:@[view1, view2, view3]];
+    [tdNotificationView showNotificationWithTitle:titleString andMessage:messageString];
+}
+
+// Show alert 1
+- (IBAction)showAlert1:(id)sender
+{
+    UIImage *view1 = [self imageFromColor:[UIColor yellowColor] withSize:CGSizeMake(100, 200)];
+    UIImage *view2 = [self imageFromColor:[UIColor orangeColor] withSize:CGSizeMake(150, 150)];
+    UIImage *view3 = [self imageFromColor:[UIColor greenColor]  withSize:CGSizeMake(50, 100)];
+    
+    // Show the help view
+    NSString *titleString = @"Vapor Quality";
+    NSString *messageString = @"Quality (x) is the mass fraction of vapor in a liquid/vapor mixture. Quality can be calculated by dividing the mass of the vapor by the total mass of the mixture.";
+    [tdNotificationView setEnableAuxView:YES];
+//    [tdNotificationView setEnableHandleAnimation:YES];
+//    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
+//    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
+    [tdNotificationView setAuxViewsArray:@[view1, view2, view3]];
+    [tdNotificationView showAlertWithTitle:titleString andMessage:messageString];
 }
 
 @end

@@ -19,9 +19,9 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 @interface TDNotificationView : NSObject <UIScrollViewDelegate>
 {
     UIView                  *blackMask;
-    UIView                  *notificationView;
-    UIView                  *alertView;
+    UIView                  *mainView;
     UIView                  *auxView;
+    UIView                  *auxViewHandle;
     UIPageControl           *pageController;
 }
 
@@ -30,22 +30,27 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 @property (nonatomic)       UIColor                 *auxHandleTint;         // default: 90% whiteColor
 @property (nonatomic)       UIColor                 *handleLineTint;        // default: grayColor
 @property (nonatomic)       UIColor                 *auxViewTint;           // default: 90% whiteColor
+@property (nonatomic)       UIFont                  *titleFont;             // default: Medium system font 15pt
+@property (nonatomic)       UIFont                  *messageFont;           // default: Light system font 13pt
+@property (nonatomic)       UIViewAnimationOptions  animationOption;        // default: UIViewAnimationOptionCurveEaseOut
 @property (nonatomic)       BOOL                    enableAuxView;          // default: NO
-@property (nonatomic)       NVAnimationStyle        animationStyle;         // default: NVExpandInPlace | (Only for alert view)
+@property (nonatomic)       NVAnimationStyle        animationStyle;         // default: NVExpandAndCenter | (Only for alert view)
 @property (nonatomic)       BOOL                    enableHandleAnimation;  // default: NO
 @property (nonatomic)       NSArray                 *auxViewsArray;         // default: nil
 @property (nonatomic)       UIViewContentMode       auxViewContentMode;     // default: UIViewContentModeCenter
 
 // Public methods
 - (void)showNotificationWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
-//- (void)showAlertWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
+- (void)showAlertWithTitle:(NSString *)titleString andMessage:(NSString *)messageString;
 
 @end
 
 // Notification Layout
 //
 // +------------------------------------+
-// |  Notification View                 |
+// |                                    |
+// |                                    |
+// |  Main View                         |
 // |  +------------------------------+  |
 // |  | Aux Handle View              |  |
 // |  +------------------------------+  |
@@ -54,5 +59,21 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 // |  +------------------------------+  |
 // |  | Aux View                     |  |
 // |  |                              |  |
+// |--+------------------------------+--|
+
+// Alert Layout
+//
+// +------------------------------------+
+// |                                    |
+// |  Main View                         |
 // |  +------------------------------+  |
+// |  | Message View                 |  |
+// |  |                              |  |
+// |  +------------------------------+  |
+// |  | Aux View                     |  |
+// |  |                              |  |
+// |  +------------------------------+  |
+// |  | Aux Handle View              |  |
+// |  +------------------------------+  |
+// |                                    |
 // +------------------------------------+

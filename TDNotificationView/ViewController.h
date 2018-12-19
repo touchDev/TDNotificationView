@@ -12,7 +12,7 @@
 @interface ViewController : UIViewController
 {
     // Notification view instance
-    TDNotificationView                *notificationView;
+    TDNotificationView                *tdNotificationView;
 }
 
 @end
