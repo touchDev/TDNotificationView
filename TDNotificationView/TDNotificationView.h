@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 @property (nonatomic)       UIColor                 *auxHandleTint;         // default: 90% whiteColor
 @property (nonatomic)       UIColor                 *handleLineTint;        // default: grayColor
 @property (nonatomic)       UIColor                 *auxViewTint;           // default: 90% whiteColor
+@property (nonatomic)       CGFloat                 cornerRadius;           // default: 10.0
 @property (nonatomic)       UIFont                  *titleFont;             // default: Medium system font 15pt
 @property (nonatomic)       UIFont                  *messageFont;           // default: Light system font 13pt
 @property (nonatomic)       UIViewAnimationOptions  animationOption;        // default: UIViewAnimationOptionCurveEaseOut
@@ -47,6 +48,7 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 
 // Notification Layout
 //
+// App Key Window
 // +------------------------------------+
 // |                                    |
 // |                                    |
@@ -63,6 +65,7 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 
 // Alert Layout
 //
+// App Key Window
 // +------------------------------------+
 // |                                    |
 // |  Main View                         |
@@ -72,6 +75,8 @@ typedef NS_ENUM(NSInteger, NVAnimationStyle)
 // |  +------------------------------+  |
 // |  | Aux View                     |  |
 // |  |                              |  |
+// |  +------------------------------+  |
+// |                                    |
 // |  +------------------------------+  |
 // |  | Aux Handle View              |  |
 // |  +------------------------------+  |

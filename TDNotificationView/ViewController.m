@@ -17,56 +17,79 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Initialize the notification view
-    tdNotificationView = [[TDNotificationView alloc] init];
-}
-
-- (UIImage *)imageFromColor:(UIColor *)color withSize:(CGSize)imageSize
-{
-    CGRect rect = CGRectMake(0, 0, imageSize.width, imageSize.height);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
 }
 
 // Show notification 1
-- (IBAction)showNotificcation1:(id)sender
+- (IBAction)showNotification1:(id)sender
 {
-    UIImage *view1 = [self imageFromColor:[UIColor yellowColor] withSize:CGSizeMake(100, 200)];
-    UIImage *view2 = [self imageFromColor:[UIColor orangeColor] withSize:CGSizeMake(150, 150)];
-    UIImage *view3 = [self imageFromColor:[UIColor greenColor]  withSize:CGSizeMake(50, 100)];
+    // Load aux view images
+    UIImage *view1 = [UIImage imageNamed:@"auxView1"];
+    UIImage *view2 = [UIImage imageNamed:@"auxView2"];
 
-    // Show the help view
-    NSString *titleString = @"Vapor Quality";
-    NSString *messageString = @"Quality (x) is the mass fraction of vapor in a liquid/vapor mixture. Quality can be calculated by dividing the mass of the vapor by the total mass of the mixture.";
+    // Show the notification view
+    NSString *titleString = @"Invalid Reference";
+    NSString *messageString = @"Invalid reference state for the selected material. Please change the reference state in settings menu.";
+    tdNotificationView = [[TDNotificationView alloc] init];
     [tdNotificationView setEnableAuxView:YES];
-//    [tdNotificationView setEnableHandleAnimation:YES];
-//    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
-//    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
-    [tdNotificationView setAuxViewsArray:@[view1, view2, view3]];
+    [tdNotificationView setAuxViewContentMode:UIViewContentModeScaleAspectFit];
+    [tdNotificationView setAuxViewsArray:@[view1, view2]];
+    [tdNotificationView showNotificationWithTitle:titleString andMessage:messageString];
+}
+
+// Show notification 2
+- (IBAction)showNotification2:(id)sender
+{
+    // Load aux view images
+    UIImage *view1 = [UIImage imageNamed:@"auxView1"];
+    UIImage *view2 = [UIImage imageNamed:@"auxView2"];
+    
+    // Show the notification view
+    NSString *titleString = @"Invalid Reference";
+    NSString *messageString = @"Invalid reference state for the selected material. Please change the reference state in settings menu.";
+    tdNotificationView = [[TDNotificationView alloc] init];
+    [tdNotificationView setEnableAuxView:YES];
+    [tdNotificationView setAuxViewContentMode:UIViewContentModeScaleAspectFit];
+    [tdNotificationView setEnableHandleAnimation:YES];
+    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
+    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
+    [tdNotificationView setAuxViewsArray:@[view1, view2]];
     [tdNotificationView showNotificationWithTitle:titleString andMessage:messageString];
 }
 
 // Show alert 1
 - (IBAction)showAlert1:(id)sender
 {
-    UIImage *view1 = [self imageFromColor:[UIColor yellowColor] withSize:CGSizeMake(100, 200)];
-    UIImage *view2 = [self imageFromColor:[UIColor orangeColor] withSize:CGSizeMake(150, 150)];
-    UIImage *view3 = [self imageFromColor:[UIColor greenColor]  withSize:CGSizeMake(50, 100)];
+    // Load aux view images
+    UIImage *view1 = [UIImage imageNamed:@"auxView1"];
+    UIImage *view2 = [UIImage imageNamed:@"auxView2"];
+
+    // Show the help view
+    NSString *titleString = @"Invalid Reference";
+    NSString *messageString = @"Invalid reference state for the selected material. Please change the reference state in settings menu.";
+    tdNotificationView = [[TDNotificationView alloc] init];
+    [tdNotificationView setEnableAuxView:YES];
+    [tdNotificationView setAuxViewContentMode:UIViewContentModeScaleAspectFit];
+    [tdNotificationView setAuxViewsArray:@[view1, view2]];
+    [tdNotificationView showAlertWithTitle:titleString andMessage:messageString];
+}
+
+// Show alert 2
+- (IBAction)showAlert2:(id)sender
+{
+    // Load aux view images
+    UIImage *view1 = [UIImage imageNamed:@"auxView1"];
+    UIImage *view2 = [UIImage imageNamed:@"auxView2"];
     
     // Show the help view
-    NSString *titleString = @"Vapor Quality";
-    NSString *messageString = @"Quality (x) is the mass fraction of vapor in a liquid/vapor mixture. Quality can be calculated by dividing the mass of the vapor by the total mass of the mixture.";
+    NSString *titleString = @"Invalid Reference";
+    NSString *messageString = @"Invalid reference state for the selected material. Please change the reference state in settings menu.";
+    tdNotificationView = [[TDNotificationView alloc] init];
     [tdNotificationView setEnableAuxView:YES];
-//    [tdNotificationView setEnableHandleAnimation:YES];
-//    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
-//    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
-    [tdNotificationView setAuxViewsArray:@[view1, view2, view3]];
+    [tdNotificationView setAuxViewContentMode:UIViewContentModeScaleAspectFit];
+    [tdNotificationView setEnableHandleAnimation:YES];
+    [tdNotificationView setAuxHandleTint:[UIColor clearColor]];
+    [tdNotificationView setHandleLineTint:[UIColor whiteColor]];
+    [tdNotificationView setAuxViewsArray:@[view1, view2]];
     [tdNotificationView showAlertWithTitle:titleString andMessage:messageString];
 }
 
