@@ -61,13 +61,12 @@ Alerts can be presented in a similar fashion. In `showSomeNotification` add the 
 with `(NSString *)titleString` being the title and `(NSString *)messageString` being the message to be shown. 
 
 ## Configuration
-TDNotificationView can be configured using the following public properties.
-**+Note:** Configuration properties must be set before presenting the view.
+TDNotificationView can be configured<sup>1</sup> using the following public properties.
 
 |Name|Default|Sample|
 |------|-----|:----:|
 |`UIColor`<br>**mainBackgroundColor**|whiteColor|<img src="./Screenshots/mainBackgroundColor.png" width=350>|
-|`UIColor`<br>**auxHandleTint**|90% whiteColor|<img src="./Screenshots/auxHandleTint.png" width=350>|
+|`UIColor`<br>**auxHandleTint**|90% whiteColor<sup>2</sup>|<img src="./Screenshots/auxHandleTint.png" width=350>|
 |`UIColor`<br>**handleLineTint**|greyColor|<img src="./Screenshots/handleLineTint.png" width=350>|
 |`UIColor`<br>**auxViewTint**|90% whiteColor|<img src="./Screenshots/auxViewTint.png" width=350>|
 |`UIFont`<br>**titleFont**|Semibold system font 16pt|<img src="./Screenshots/titleFont.png" width=350>|
@@ -78,6 +77,11 @@ TDNotificationView can be configured using the following public properties.
 |`BOOL`<br>**enableHandleAnimation**|NO||
 |`NSArray`<br>**auxViewsArray**|nil||
 |`UIViewContentMode`<br>**auxViewContentMode**|Center||
+
+<sup>1</sup> Configuration properties must be set before presenting the view.<br>
+<sup>2</sup> You can also use a transparent handle color and other views will be adjusted automatically.
+
+<img src="./Screenshots/AlertNotification2.png">
 
 ## Follow us for the latest updates
 <a href="https://github.com/touchDev" >
